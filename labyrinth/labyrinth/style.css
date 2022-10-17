@@ -1,0 +1,282 @@
+*{
+    font-family: Arial;
+}
+
+body{
+    background-color: rgb(55, 55, 117);
+}
+
+canvas{
+    width:80%;
+    height:80%;
+}
+
+.mainDivs{
+    position: absolute;
+    height: 90%;
+    width: 90%;
+}
+
+.transparent{
+    display: none !important;
+}
+
+.title{
+    font-size:800%;
+    font-weight: bold;
+    background-clip: text;
+    margin: 0.1vmax auto;
+    color: yellow;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.columnFlow{
+    flex-flow: column;
+}
+
+.sliderDiv{
+    margin-top: 2vmax;
+    width: 60%;
+}
+
+.buttonsDiv{
+    margin-top: 2vmax;
+    width: 30%;
+    height: 50%;
+}
+
+.box17{
+    margin: 2vmax 0;
+    position: relative;
+    padding: 0.5vmax 1.5vmax;
+    border-top: solid 6px #FFDD00;
+    border-bottom: solid 6px #FFDD00;
+}
+.box17:before, .box17:after{
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 6px;
+    height: calc(100% + 30px);
+    background-color: #FFDD00;
+}
+.box17:before {left: 10px;}
+.box17:after {right: 10px;}
+
+.box18{
+    margin: 2em 0;
+    position: relative;
+    padding: 0.5vmax 1.5vmax;
+    border-top: solid 6px #FFDD00;
+    border-bottom: solid 6px #FFDD00;
+}
+.box18:before, .box18:after{
+    content: '';
+    position: absolute;
+    top: 0px;
+    width: 6px;
+    height: 100%;
+    background-color: #FFDD00;
+}
+.box18:before {
+    left: 0px;
+    top: -15px;
+    height: calc(100% + 30px);
+}
+.box18:after {right: 0px;}
+
+.box19{
+    position: relative;
+    padding: 0.5vmax 1.5vmax;
+    border-top: solid 6px #000000;
+    border-bottom: solid 6px #000000;
+}
+
+.box20{
+    width:40%;
+    height:50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.box20:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+.box21{
+    width:90%;
+    height:90%;
+    border: solid 3px gray;
+    border-radius: 5px;
+}
+
+.playerText{
+    color:white;
+    font-weight: bold;
+    font-size: 1.5vmax;
+}
+
+.playerTurnBox{
+    font-size: 3vmax;
+    margin-top: -0.3vmax;
+    margin-bottom: 0;
+}
+
+.mainMenuButtons{
+    width:60%;
+    height: 25%;
+    margin: 0.5vmax auto;
+}
+
+.victoryButton{
+    background: linear-gradient(to bottom, #e1e67c 5%, #ccb20a 100%);
+    border: 3px solid black;
+    border-radius: 10px;
+    font-size:1.5vmax;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.victoryButton:hover{
+    background: linear-gradient(to bottom, #ccb20a 5%, #e1e67c 100%);
+}
+
+.victoryButton:active {
+	position: relative;
+    top: 1px;
+}
+
+.buttons{
+    background: linear-gradient(to bottom, #e1e67c 5%, #ccb20a 100%);
+	background-color: #e1e67c;
+	border-radius: 10px;
+	border: 3px solid #a8892b;
+	cursor: pointer;
+    color: rgb(55, 55, 117);
+	font-family: Arial;
+	font-size: 1.5vmax;
+	font-weight: bold;
+	padding: 1vmax 2vmax;
+}
+.buttons:hover {
+	background: linear-gradient(to bottom, #ccb20a 5%, #e1e67c 100%);
+	background-color: #ccb20a;
+    font-size:1.6vmax;
+}
+.buttons:active {
+	position: relative;
+	top: 1px;
+}
+.disabled {
+    background: gray;
+}
+.disabled:hover {
+    background: gray;
+    font-size: 1.5vmax;
+}
+.statH3{
+    font-size: 2vmax;
+    margin-top: 0.2vmax;
+}
+
+.statText{
+    color: black;
+}
+
+.playerStatsBox{
+    width: 60%;
+    margin: 1vmax 0 3vmax 0;
+}
+
+.topMargin{
+    margin-top: 2em;
+}
+
+.bottomMargin{
+    margin-bottom: 2em;
+}
+
+#victoryCard{
+    height: 80%;
+    background-image: linear-gradient(yellow, orange);
+}
+
+#players{
+    margin-left: 1vmax;
+}
+
+#cards{
+    margin-left: 1vmax;
+}
+
+#gameStatBox{
+    position:absolute;
+    width:30%;
+    height:80%;
+    left:60%;
+    background-image: linear-gradient(yellow, orange);
+}
+
+#innerGameStatBox{
+    width:90%;
+    height:80%;
+}
+
+h3{
+    margin-bottom: 0.1vmax;
+}
+
+#playerPos{
+    font-size:1.2vmax;
+}
+
+#treasuresLeft{
+    font-size:1.2vmax;
+}
+
+#playerColor{
+    font-size:4.5vmax;
+    display: inline;
+    vertical-align: top;
+}
+
+#playerTurn{
+    display: inline;
+}
+
+#currentCardNum{
+    font-size:6vmax;
+}
+
+#victory{
+    width: 80%;
+    height:80%;
+}
+
+#playerWon{
+    font-size:2.5vmax;
+}
+
+#saveButton{
+    position: absolute;
+    top: 95%;
+    right: 30%;
+}
+
+#returnButton{
+    position: absolute;
+    top: 95%;
+    right: 7%;
+}
+
+input[type=range] {
+  height: 100%;
+  margin: 10px 0;
+  width: 40%;
+  background-color: white;
+}

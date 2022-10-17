@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script src="assets.js"></script>
+        <script src="game.js"></script>
+    </head>
+    <body class="center">
+        <div id="mainmenu" class="mainDivs center box17 columnFlow">
+            <h1 class="title">LABYRINTH</h1>
+            <div class="sliderDiv center">
+                <output class="playerText">1 Players</output>
+                <input id="players" type="range" min="1" max="4" value="1" oninput="this.previousElementSibling.value = this.value + ' Players'">
+            </div>
+            <div class="sliderDiv center">
+                <output class="playerText">3 Cards</output>
+                <input id="cards" type="range" min="3" max="6" value="3" oninput="this.previousElementSibling.value = this.value + ' Cards'">
+            </div>
+            <div class="buttonsDiv center columnFlow">
+                <button id="playButton" class="mainMenuButtons buttons center" onclick="changeScreen('game')">
+                    Play
+                </button>
+                <button id="continueButton" class="mainMenuButtons buttons center" onclick="changeScreen('continue')">
+                    Continue
+                </button>
+                <button id="instructionsButton" class="mainMenuButtons buttons center" onclick="changeScreen('instructions')">
+                    Instructions
+                </button>
+                <button id="authorButton" class="mainMenuButtons buttons center" onclick="changeScreen('author')">
+                    Author
+                </button>
+            </div>
+        </div>
+        <div id="instructions" class="mainDivs box17 transparent">
+            <p class="playerText">
+                Move the tiles of the labyrinth around to collect the treasures.
+                To win, one must collect all the treasures on the treasure cards and reach back to the starting position before the others.
+                Controls:
+                The extra tile can be moved around with WASD keys, and it can be pushed in with the Enter key. You can rotate it with E and Q keys.
+                The current character can be moved around with WASD keys, pressing the Enter key finalises the position.
+            </p>
+            <button class="buttons" onclick="changeScreen('mainmenu')">Back</button>
+        </div>
+        <div id="author" class="mainDivs box17 transparent">
+            <p class="playerText">
+                Balla Viktória L9Z49I
+            </p>
+            <button class="buttons" onclick="changeScreen('mainmenu')">Back</button>
+        </div>
+        <div id="game" class="mainDivs center transparent">
+            <canvas id="canvas" class="box17">
+
+            </canvas>
+            <div id="gameStatBox" class="box18 center columnFlow statText">
+                <h3 id="currentTurn">Turn 1</h3>
+                <h1 class="playerTurnBox"><span id="playerTurn">Player 1's Turn</span> <span id="playerColor">●</span></h1>
+                <div id="innerGameStatBox" class="box19">
+                    <h3 class="statH3">Current Position:</h3>
+                    <span id="playerPos">x: 0, y: 0</span>
+                    <h3 class="statH3">Treasures Left:</h3>
+                    <span id="treasuresLeft">0</span>
+                    <h3 class="statH3">Treasure to Get:</h3>
+                    <div id="card" class="box20 center columnFlow">
+                        <div id="innerCard" class="box21 center columnFlow">
+                            <h1 id="currentCardNum">1</h1>
+                        </div>
+                    </div>
+                    <div id="playerGotAllTreasure" class="transparent">
+                        <p class="statH3">Player already got all treasures! Get back to the starting point!</p>
+                    </div>
+                </div>
+            </div>
+            <button id="saveButton" class="buttons" onclick="doubleCheckToSave()">Save Game</button>
+            <button id="returnButton" class="buttons" onclick="doubleCheckToReturn()">Return to main menu</button>
+        </div>
+        <div id="victory" class="mainDivs box17 transparent center columnFlow">
+            <div id="victoryCard" class="box20 center columnFlow">
+                <div class="box19 playerStatsBox">
+                    <h1 id="playerWon">Player 0 WON!</h1>
+                    <h3 class="bottomMargin">Total Turns Taken: <span id="totalTurns">1</span></h3>
+                </div>
+                <button class="victoryButton" onclick="changeScreen('mainmenu')">Return to main menu</button>
+            </div>
+        </div>
+    </body>
+</html>
